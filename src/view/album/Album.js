@@ -24,6 +24,7 @@ export default function Album() {
     }
   }, []);
 
+
   return (
     <div className="container">
       <div className={style.album}>
@@ -31,7 +32,13 @@ export default function Album() {
         {albums === 'loading' ? <div>Loading Album</div> :
           <div className="card-columns">
             {albums.map((item) =>
-              <Link to={`gallery/${item.id}`} type="button" className={`btn m-1 ${colorScheme[Math.floor(Math.random() * colorScheme.length)]}`} key={item.id}>{item.title}</Link>
+              <Link
+                to={`gallery/${item.id}`}
+                type="button"
+                className={`btn m-1 btn-lg ${colorScheme[Math.floor(Math.random() * colorScheme.length)]}`}
+                key={item.id}>
+                {item.title}
+              </Link>
             )}
           </div>
         }
