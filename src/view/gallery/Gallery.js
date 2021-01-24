@@ -16,7 +16,7 @@ export default function Gallery() {
   }, []);
   return (
     <div className="container">
-      <div className="text-end my-3"><Link to="/" className="btn btn-outline-success">Back</Link></div>
+      <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light"><div className="container"><Link to="/" className="nav-link">Back</Link></div></nav>
       <div className="row">
         {!gallery[id] ? <div>Loading Gallery</div> :
           gallery[id].map((item) => <div className="col-sm-1 col-md-4 mb-3 d-flex" key={item.id}><div className="card w-100">
