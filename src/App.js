@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Album from "./view/album/Album";
+import Gallery from "./view/gallery/Gallery";
+
+function Page404() {
+  return <div className="container text-center mt-5"><h2>Page Not Found</h2></div>
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Switch>
+      <Route path='/' component={Album} exact />
+      <Route path='/gallery/:id' component={Gallery} />
+      <Route component={Page404} />
+    </Switch>
   );
 }
 
